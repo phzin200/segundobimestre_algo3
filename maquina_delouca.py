@@ -1,31 +1,34 @@
 import time
-ligado = False
-tempo = 0
-potencia = 0 
 
-def ligar(novo_tempo, nova_potencia):
+
+
+ligado: False
+tempo: 0
+temperatura: 0 
+
+def ligar(novo_tempo, novo_grau):
     global ligado, tempo, potencia 
     if not ligado:
         ligado = True
         tempo = novo_tempo
-        potencia = nova_potencia
-        print(f' microondas ligado por (tempo)segundos na potencias (potencia)')
+        grau = novo_grau
+        print(f' microondas ligado por (tempo)segundos no grau (grau)')
         iniciar_cronometros(tempo)
         desligar() #desligar automaticamente
     else:
-        print('o microondas ja esta ligado')
+        print('a maquina ja esta ligado')
         
 def desligar():
      global ligado
      if ligado:
        ligado = False
-       print('microondas esta desligado') 
+       print('maquina esta desligado') 
      else:
-       print ('microondas ja esta desligado')
+       print ('maquina esta desligado')
     
 def status():
     if ligado:
-        print(f' tempo: (tempo)segundos \n potencia:(potencia)')
+        print(f' tempo: (tempo)segundos \n temeperatura:(temperatura)')
     else:
         print(f"desligado")
         
@@ -36,9 +39,17 @@ def iniciar_cronometros(segundos):
         segundos -= 1
     print("\n tempo esgotado")
     
-def pipoca():
-    ligar(30)(100)
+def vidro():
+    ligar(120,100)
     
-pipoca()
+vidro()
+
+def plastico():
+    ligar(60,21)
+    
+plastico()
+
+def metal():
+    ligar(180,30)
         
-   
+metal()
